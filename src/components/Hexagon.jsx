@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.2.3 public/models/hexagon.glb -o src/components/Hexagon.j
 import { useGLTF } from "@react-three/drei";
 import React from "react";
 
-export function Hexagon({ color, ...props }) {
+const Hexagon = ({ color, ...props }) => {
   const { nodes, materials } = useGLTF("/models/hexagon.glb", "draco/gltf/");
 
   return (
@@ -20,6 +20,8 @@ export function Hexagon({ color, ...props }) {
       </mesh>
     </group>
   );
-}
+};
+
+export default Hexagon;
 
 useGLTF.preload("/models/hexagon.glb", "draco/gltf/");
